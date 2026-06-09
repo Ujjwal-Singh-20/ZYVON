@@ -1,0 +1,55 @@
+:root {
+  --font-primary: 'Outfit', sans-serif;
+  --font-mono: 'Space Grotesk', sans-serif;
+  --font-handwritten: 'Permanent Marker', cursive;
+  --font-wireframe: var(--font-handwritten);
+  --bg-primary: #030303;
+  --bg-secondary: #0a0a0a;
+  --accent-white: #ffffff;
+  --accent-gray: #a0a0a0;
+  --accent-muted: #444444;
+  --accent-glow: rgba(255, 255, 255, 0.05);
+  --accent-lavender: #dcd0ff;
+  --accent-mint: #c5ecd2;
+  --accent-peach: #ffd3b6;
+  --radial-glow: radial-gradient(circle at center, #181818 0%, #030303 70%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--accent-white);
+  font-family: var(--font-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030303;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
