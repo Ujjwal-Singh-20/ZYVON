@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 
 import Loader from './components/Loader';
 import PlaylistToggle from './components/PlaylistToggle';
@@ -247,6 +248,7 @@ export default function App() {
           {isLoading && <Loader onComplete={() => setIsLoading(false)} />}
         </AnimatePresence>
         {!isLoading && <Layout />}
+        <Analytics />
       </Router>
     </AppProvider>
   );
