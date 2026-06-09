@@ -3742,8 +3742,7 @@
   cursor: not-allowed;
   transform: none;
 }
- . c h e c k o u t - g r i d   {   d i s p l a y :   g r i d ;   g r i d - t e m p l a t e - c o l u m n s :   1 . 5 f r   1 f r ;   g a p :   4 0 p x ;   } 
- @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   { 
-     . c h e c k o u t - g r i d   {   g r i d - t e m p l a t e - c o l u m n s :   1 f r ;   g a p :   2 0 p x ;   } 
- }  
- 
+.checkout-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; }
+@media (max-width: 768px) {
+  .checkout-grid { grid-template-columns: 1fr; gap: 20px; }
+}
