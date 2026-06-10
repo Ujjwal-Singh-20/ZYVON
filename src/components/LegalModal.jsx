@@ -184,8 +184,8 @@ function TermsContent() {
       </Section>
       <Section title="9. Contact">
         For any queries regarding these Terms, contact us at{' '}
-        <a href="mailto:priyadarshih99@gmail.com" style={{ color: 'var(--wire-glow)' }}>
-          priyadarshih99@gmail.com
+        <a href="mailto:zyvonclothing@gmail.com" style={{ color: 'var(--wire-glow)' }}>
+          zyvonclothing@gmail.com
         </a>.
       </Section>
     </>
@@ -227,8 +227,8 @@ function PrivacyContent() {
       <Section title="6. Your Rights">
         You have the right to access, correct, or request deletion of your personal data. To exercise
         these rights, contact us at{' '}
-        <a href="mailto:priyadarshih99@gmail.com" style={{ color: 'var(--wire-glow)' }}>
-          priyadarshih99@gmail.com
+        <a href="mailto:zyvonclothing@gmail.com" style={{ color: 'var(--wire-glow)' }}>
+          zyvonclothing@gmail.com
         </a>.
       </Section>
       <Section title="7. Changes to This Policy">
@@ -268,8 +268,8 @@ function RefundContent() {
         </ul>
         <p style={{ marginTop: '10px' }}>
           To initiate a return, email{' '}
-          <a href="mailto:priyadarshih99@gmail.com" style={{ color: 'var(--wire-glow)' }}>
-            priyadarshih99@gmail.com
+          <a href="mailto:zyvonclothing@gmail.com" style={{ color: 'var(--wire-glow)' }}>
+            zyvonclothing@gmail.com
           </a>{' '}
           with your Order ID and photos of the issue.
         </p>
@@ -299,8 +299,8 @@ function ContactContent() {
         within one business day.
       </p>
       <Section title="Support Email">
-        <a href="mailto:priyadarshih99@gmail.com" style={{ color: 'var(--wire-glow)', fontSize: '15px' }}>
-          priyadarshih99@gmail.com
+        <a href="mailto:zyvonclothing@gmail.com" style={{ color: 'var(--wire-glow)', fontSize: '15px' }}>
+          zyvonclothing@gmail.com
         </a>
         <p style={{ marginTop: '6px', fontSize: '12px', color: '#555' }}>
           For order issues, refunds, or general queries.

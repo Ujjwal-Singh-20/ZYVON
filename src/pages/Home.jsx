@@ -248,7 +248,7 @@ export default function Home() {
             {/* Contact */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <span style={{ fontFamily: 'var(--font-wireframe)', fontSize: '10px', letterSpacing: '3px', color: '#555', marginBottom: '4px' }}>CONTACT</span>
-              <a href="mailto:priyadarshih99@gmail.com" style={{ color: '#888', fontSize: '12px', textDecoration: 'none' }}>priyadarshih99@gmail.com</a>
+              <a href="mailto:zyvonclothing@gmail.com" style={{ color: '#888', fontSize: '12px', textDecoration: 'none' }}>zyvonclothing@gmail.com</a>
               <a href="tel:+918278336549" style={{ color: '#888', fontSize: '12px', textDecoration: 'none' }}>+91 82783 36549</a>
               <span style={{ color: '#555', fontSize: '11px' }}>Mon–Sat · 10AM–6PM IST</span>
             </div>

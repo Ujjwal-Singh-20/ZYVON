@@ -13,7 +13,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from firebase_client import get_db
 from dependencies import get_current_user
 from razorpay_client import create_order, create_refund
-from email_service import (
+from brevo_email_service import (
     send_order_confirmation_email,
     send_admin_notification_email,
     send_order_canceled_email

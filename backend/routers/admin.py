@@ -20,7 +20,7 @@ from google.cloud.firestore_v1 import SERVER_TIMESTAMP
 from pydantic import BaseModel
 from typing import Optional
 import logging
-from email_service import send_order_delivered_email, send_order_canceled_email
+from brevo_email_service import send_order_delivered_email, send_order_canceled_email
 
 
 class StockUpdateIn(BaseModel):
@@ -177,7 +177,7 @@ def accept_return(order_id: str, _admin: dict = Depends(get_admin_user)):
         if user_doc.exists:
             user_email = user_doc.to_dict().get("email")
             if user_email:
-                from email_service import send_return_accepted_email
+                from brevo_email_service import send_return_accepted_email
                 refunded = data.get("paymentType") == "online"
                 send_return_accepted_email(user_email, order_id, data.get("grandTotal", 0), refunded, data.get("products", []))
     
@@ -226,7 +226,7 @@ def reject_return(order_id: str, _admin: dict = Depends(get_admin_user)):
         if user_doc.exists:
             user_email = user_doc.to_dict().get("email")
             if user_email:
-                from email_service import send_return_rejected_email
+                from brevo_email_service import send_return_rejected_email
                 send_return_rejected_email(user_email, order_id, data.get("products", []))
                 
     return MessageOut(message="Return rejected and reverted to completed status")

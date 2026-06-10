@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     # Email
     smtp_email: str = Field(default="", validation_alias="SMTP_EMAIL")
     smtp_app_password: str = Field(default="", validation_alias="SMTP_APP_PASSWORD")
+    brevo_api_key: str = Field(default="", validation_alias="BREVO_API_KEY")
 
     # Google OAuth
     google_client_id: str = Field(..., validation_alias="GOOGLE_CLIENT_ID")
