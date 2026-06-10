@@ -128,7 +128,7 @@ export default function CategoryPage() {
               {idx === breadcrumb.length - 1 ? (
                 <span className="breadcrumb-current">{crumb.name}</span>
               ) : (
-                <Link to={`/category/${crumb.slug || crumb.id}`} className="breadcrumb-link" style={{ cursor: 'pointer', textDecoration: 'underline' }}>{crumb.name}</Link>
+                <Link to={`/category/${crumb.id}`} className="breadcrumb-link" style={{ cursor: 'pointer', textDecoration: 'underline' }}>{crumb.name}</Link>
               )}
             </React.Fragment>
           ))}
@@ -158,7 +158,7 @@ export default function CategoryPage() {
                   transition={{ delay: idx * 0.07 }}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <Link to={`/category/${sub.slug || sub.categoryId}`} className="category-card-link">
+                  <Link to={`/category/${sub.categoryId}`} className="category-card-link">
                     {sub.thumbnail && (
                       <img src={sub.thumbnail} alt={sub.name} className="category-card-img" />
                     )}

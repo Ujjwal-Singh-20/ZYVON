@@ -153,7 +153,7 @@ export default function Home() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                   data-glow={getCategoryGlow(idx)}
                 >
-                  <Link to={`/category/${cat.slug || cat.categoryId}`} className="category-card-link">
+                  <Link to={`/category/${cat.categoryId}`} className="category-card-link">
                     {cat.thumbnail ? (
                       <img src={cat.thumbnail} alt={cat.name} className="category-card-img" />
                     ) : (

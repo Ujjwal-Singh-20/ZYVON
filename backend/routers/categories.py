@@ -100,6 +100,9 @@ def create_category(
     if not payload.get("slug"):
         payload["slug"] = re.sub(r'[^a-z0-9]+', '-', body.name.lower()).strip('-')
         
+    if payload.get("parentId") == "":
+        payload["parentId"] = None
+        
     payload["createdAt"] = SERVER_TIMESTAMP
     payload["updatedAt"] = SERVER_TIMESTAMP
 
@@ -144,6 +147,10 @@ def update_category(
 
     # Only update the fields that are provided (partial update, not a full rewrite)
     update_payload = {k: v for k, v in body.model_dump().items() if v is not None}
+    
+    if update_payload.get("parentId") == "":
+        update_payload["parentId"] = None
+        
     update_payload["updatedAt"] = SERVER_TIMESTAMP
     ref.update(update_payload)
 
