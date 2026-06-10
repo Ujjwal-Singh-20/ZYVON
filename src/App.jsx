@@ -188,8 +188,10 @@ function Layout() {
                     if (label === 'Cart') {
                       e.preventDefault();
                       setIsCartOpen(true);
+                      closeMobileMenu();
+                    } else {
+                      setTimeout(() => closeMobileMenu(), 100);
                     }
-                    closeMobileMenu();
                   }}
                   style={{ '--link-color': NAV_ACCENT_COLORS[idx] }}
                 >
