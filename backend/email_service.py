@@ -39,9 +39,8 @@ def _send_email_async(to_email: str, subject: str, html_body: str):
     msg.attach(MIMEText(html_body, "html"))
 
     try:
-        # Use Gmail SMTP server as default assumption based on plan
-        server = smtplib.SMTP("smtp.gmail.com", 587)
-        server.starttls()
+        # Use Gmail SMTP server with SSL on port 465
+        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
         server.login(sender_email, sender_password)
         server.sendmail(sender_email, to_email, msg.as_string())
         server.quit()
