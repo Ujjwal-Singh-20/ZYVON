@@ -79,12 +79,22 @@ function Layout() {
       <header className="navbar" style={{ zIndex: 100 }}>
         <div className="nav-container" ref={navContainerRef}>
           <div className="logo-section" ref={logoRef}>
-            <Link to="/" className="logo" style={{ textDecoration: 'none', color: 'inherit' }}>ZYVON</Link>
+            <Link 
+              to="/" 
+              className="logo" 
+              style={{ textDecoration: 'none', color: 'inherit', position: 'relative', zIndex: 10 }}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (mobileMenuOpen) closeMobileMenu();
+              }}
+            >
+              ZYVON
+            </Link>
             <span className="logo-dot"></span>
           </div>
 
-          <div className="nav-wire-canvas" ref={navCanvasRef}>
-            <svg width="100%" height="100%" fill="none">
+          <div className="nav-wire-canvas" ref={navCanvasRef} style={{ pointerEvents: 'none' }}>
+            <svg width="100%" height="100%" fill="none" style={{ pointerEvents: 'none' }}>
               <line x1="0" y1="50%" x2="100%" y2="50%" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
               <AnimatePresence>
                 {wireTarget && (
@@ -190,7 +200,7 @@ function Layout() {
                       setIsCartOpen(true);
                       closeMobileMenu();
                     } else {
-                      setTimeout(() => closeMobileMenu(), 100);
+                      setTimeout(() => closeMobileMenu(), 400);
                     }
                   }}
                   style={{ '--link-color': NAV_ACCENT_COLORS[idx] }}
