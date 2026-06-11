@@ -198,6 +198,7 @@ def checkout_online(
     order_doc = {
         "orderId": order_id,
         "userId": uid,
+        "userEmail": email,
         "products": order_products,
         "totalAmount": total_amount,
         "platformCharge": platform_charge,
@@ -306,6 +307,7 @@ def checkout_cod(
     current_user: dict = Depends(get_current_user),
 ):
     uid = current_user["uid"]
+    email = current_user.get("email", "")
     settings = get_settings()
     db = get_db()
 
@@ -348,6 +350,7 @@ def checkout_cod(
     order_doc = {
         "orderId": order_id,
         "userId": uid,
+        "userEmail": email,
         "products": order_products,
         "totalAmount": total_amount,
         "platformCharge": platform_charge,

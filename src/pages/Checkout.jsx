@@ -14,6 +14,8 @@ export default function Checkout() {
   const [stateName, setStateName] = useState('');
   const [pincode, setPincode] = useState('');
   const [phone, setPhone] = useState('');
+  const [pincodeError, setPincodeError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
 
   const [paymentType, setPaymentType] = useState('cod'); // Forced 'cod' temporarily
   const [isProcessing, setIsProcessing] = useState(false);
@@ -200,20 +202,36 @@ export default function Checkout() {
               />
             </div>
             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-              <input
-                type="text"
-                placeholder="Pincode / ZIP"
-                value={pincode}
-                onChange={e => setPincode(e.target.value)}
-                style={{ flex: '1 1 45%', padding: '12px', background: '#111', border: '1px solid #333', color: '#fff', borderRadius: '4px', minWidth: '150px' }}
-              />
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                value={phone}
-                onChange={e => setPhone(e.target.value)}
-                style={{ flex: '1 1 45%', padding: '12px', background: '#111', border: '1px solid #333', color: '#fff', borderRadius: '4px', minWidth: '150px' }}
-              />
+              <div style={{ flex: '1 1 45%', minWidth: '150px' }}>
+                <input
+                  type="text"
+                  placeholder="Pincode / ZIP"
+                  value={pincode}
+                  onChange={e => {
+                    const val = e.target.value;
+                    if (/\D/.test(val)) setPincodeError('Not a valid number');
+                    else setPincodeError('');
+                    setPincode(val.replace(/\D/g, ''));
+                  }}
+                  style={{ width: '100%', padding: '12px', background: '#111', border: pincodeError ? '1px solid #ff4444' : '1px solid #333', color: '#fff', borderRadius: '4px' }}
+                />
+                {pincodeError && <div style={{ color: '#ff4444', fontSize: '11px', marginTop: '4px' }}>{pincodeError}</div>}
+              </div>
+              <div style={{ flex: '1 1 45%', minWidth: '150px' }}>
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  value={phone}
+                  onChange={e => {
+                    const val = e.target.value;
+                    if (/\D/.test(val)) setPhoneError('Not a valid number');
+                    else setPhoneError('');
+                    setPhone(val.replace(/\D/g, ''));
+                  }}
+                  style={{ width: '100%', padding: '12px', background: '#111', border: phoneError ? '1px solid #ff4444' : '1px solid #333', color: '#fff', borderRadius: '4px' }}
+                />
+                {phoneError && <div style={{ color: '#ff4444', fontSize: '11px', marginTop: '4px' }}>{phoneError}</div>}
+              </div>
             </div>
           </div>
 

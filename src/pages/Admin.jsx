@@ -489,6 +489,12 @@ export default function Admin() {
                                 <span className="detail-label">User ID</span>
                                 <span className="detail-value mono">{order.userId}</span>
                               </div>
+                              {order.userEmail && (
+                                <div className="admin-order-detail-row">
+                                  <span className="detail-label">User Email</span>
+                                  <span className="detail-value">{order.userEmail}</span>
+                                </div>
+                              )}
                               <div className="admin-order-detail-row">
                                 <span className="detail-label">Payment Type</span>
                                 <span className="detail-value">{order.paymentType?.toUpperCase()}</span>
